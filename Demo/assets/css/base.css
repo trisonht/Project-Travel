@@ -1,0 +1,106 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #717171;
+    --main-color: #3fd0d4;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+.active {
+    color: #3fd0d4 !important;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lists {
+    position: absolute;
+    width: 260px;
+    left: -68px;
+    top: calc(100% - 2px);
+    margin: 24px 30px;
+    padding: 24px 0;
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: var(--white-color);
+    display: none;
+}
+
+.lists::before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 25px;
+    width: 100%;
+    top: -22px;
+}
+
+.header__list a {
+    display:inline-block;
+    text-decoration: none;
+    color: var(--black-color);
+    line-height: 2.4rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 6px 0;
+}
+
+.header__navbar-list li:hover .header__navbar-link{
+    color: #3fd0d4;
+}
+
+.header__navbar-list li:hover .lists {
+    display: block;
+}
+
+.fakeclass::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: calc(100% + 3px);
+    left: 0;
+    width: 0;
+    height: 2px;
+}
+
+.header__navbar-list li:hover .fakeclass::after {
+    background-color: var(--main-color);
+    animation: fadeIn linear 0.2s both;
+}
+
+.header__item:hover a {
+    color: var(--main-color);
+}
+
+@keyframes fadeIn {
+    from {
+       width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
